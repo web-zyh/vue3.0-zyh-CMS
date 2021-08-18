@@ -4,42 +4,40 @@
       @toggleClick="toggleSideBar"
     />
     <Breadcrumb />
-    <div style="display: flex;justify-content: flex-end;align-items: center;flex-grow: 1;height: 100%;">
-      <el-tooltip effect="dark" content="全屏" placement="bottom">
-        <Screenfull class="screenfull" />
-      </el-tooltip>
 
-      <div style="cursor: pointer;height: 100%;display: flex;">
-            <a-dropdown :placement="dropdown_placement[0]" :trigger="dropdown_trigger">
-              <section style="height: 100%;display: flex;align-items: center;margin-right: 12px;">
-                <GlobalOutlined />
-              </section>
-              <template #overlay>
-                <a-menu>
-                  <a-menu-item key="0" @click="checkLanguage('cn')">简体中文</a-menu-item>
-                  <a-menu-divider />
-                  <a-menu-item key="1" @click="checkLanguage('en')">English</a-menu-item>
-                </a-menu>
-              </template>
-            </a-dropdown>
-            <a-dropdown :placement="dropdown_placement[1]" :trigger="dropdown_trigger">
-              <section style="height: 100%;display: flex;align-items: center;justify-content: center;position:relative;">
-                <img style="width: 40px;height: 40px;cursor: pointer;border-radius: 10px;" src="https://www.xueyueob.cn/cube/cube01.bmp"/>
-                <i class="el-icon-caret-bottom" style="position: absolute;top: 25px;right: -16px;font-size: 12px;"></i>
-              </section> 
-              <template #overlay>
-                <a-menu>
-                  <a-menu-item key="0" @click="$router.push('/index')"><UserOutlined />首页</a-menu-item>
-                  <a-menu-divider />
-                  <a-menu-item key="1"><UserOutlined />个人中心</a-menu-item>
-                  <a-menu-divider />
-                  <a-menu-item key="2"><SettingOutlined />个人设置</a-menu-item>
-                  <a-menu-divider />
-                  <a-menu-item key="3" @click="logoutOut"><LogoutOutlined />退出登录</a-menu-item>
-                </a-menu>
-              </template>
-            </a-dropdown>
-      </div>
+    <div style="cursor: pointer;height: 100%;display: flex;align-items: center;justify-content: flex-end;flex-grow: 1;">
+          <el-tooltip effect="dark" content="全屏" placement="bottom">
+            <Screenfull class="screenfull" />
+          </el-tooltip>
+          <a-dropdown :placement="dropdown_placement[0]" :trigger="dropdown_trigger">
+            <section style="height: 100%;display: flex;align-items: center;margin-right: 12px;">
+              <GlobalOutlined />
+            </section>
+            <template #overlay>
+              <a-menu>
+                <a-menu-item key="0" @click="checkLanguage('cn')">简体中文</a-menu-item>
+                <a-menu-divider />
+                <a-menu-item key="1" @click="checkLanguage('en')">English</a-menu-item>
+              </a-menu>
+            </template>
+          </a-dropdown>
+          <a-dropdown :placement="dropdown_placement[1]" :trigger="dropdown_trigger">
+            <section style="height: 100%;display: flex;align-items: center;justify-content: center;position:relative;">
+              <img style="width: 40px;height: 40px;cursor: pointer;border-radius: 10px;" src="https://www.xueyueob.cn/cube/cube01.bmp"/>
+              <i class="el-icon-caret-bottom" style="position: absolute;top: 25px;right: -16px;font-size: 12px;"></i>
+            </section> 
+            <template #overlay>
+              <a-menu>
+                <a-menu-item key="0" @click="$router.push('/index')"><UserOutlined />首页</a-menu-item>
+                <a-menu-divider />
+                <a-menu-item key="1"><UserOutlined />个人中心</a-menu-item>
+                <a-menu-divider />
+                <a-menu-item key="2"><SettingOutlined />个人设置</a-menu-item>
+                <a-menu-divider />
+                <a-menu-item key="3" @click="logoutOut"><LogoutOutlined />退出登录</a-menu-item>
+              </a-menu>
+            </template>
+          </a-dropdown>
     </div>
 </template>
 
@@ -150,7 +148,7 @@ export default defineComponent({
 <style lang="scss" scoped>
 .navbar {
   height: 50px;
-  overflow: hidden;
   line-height: 50px;
+  overflow: hidden;
 }
 </style>

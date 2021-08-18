@@ -1,5 +1,12 @@
 @import '../media.scss';
 // container容易 被占用，所以用 lycontainer（layoutcontainer）
+
+/****
+* 1级导航 52像素
+* 2级tagView导航 52像素
+* 侧边栏 展开时200像素，关闭时80像素
+******/
+
 .lycontainer {
     padding: 0 38px !important;
     width: 100%;

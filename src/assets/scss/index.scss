@@ -1,4 +1,4 @@
-@import './common//layout.scss';
+@import './common/layout.scss';
 html {
     font-family: MHei, PFSquareSansPromedium, Microsoft JhengHei, 微軟正黑體, Myriad Set Pro, Helvetica Neue, Helvetica, sans-serif, Arial;
     line-height: 1.4;
@@ -7,4 +7,9 @@ html {
 #app {
     width: 100%;
     height: 100%;
+}
+
+// header高度 52px tagView高度52px main区域防止遮挡  设置margin-top: 104px;
+.layout_main {
+    margin-top: 104px;
 }
