@@ -1,0 +1,22 @@
+.layout-header {
+    background: #fff;
+    box-shadow: 0 1px 4px #ddd;
+    padding: 0;
+    height: 48px;
+    line-height: 48px;
+    width: 100%;
+    z-index: 9;
+    & .header {
+        display: flex;
+        align-items: center;
+        height: 100%;
+        padding: 0 16px;
+        background: #fff;
+        & .header-left-icon {
+            display: flex;
+            align-items: center;
+            margin-left: 16px;
+            font-size: 20px;
+        }
+    }
+}

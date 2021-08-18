@@ -1,0 +1,20 @@
+@import '../media.scss';
+// container容易 被占用，所以用 lycontainer（layoutcontainer）
+.lycontainer {
+    padding: 0 38px !important;
+    width: 100%;
+    // max-width: 1440px;
+    margin-left: auto;
+    margin-right: auto;
+    // fix: IE 下会出现滚动条
+    overflow: hidden;
+    @media #{$--device-pc} {
+        padding: 0 $--container-p-padding-x !important;
+    }
+    @media #{$--device-tablet} {
+        padding: 0 $--container-t-padding-x !important;
+    }
+    @media #{$--device-mobile} {
+        padding: 0 $--container-m-padding-x !important;
+    }
+}

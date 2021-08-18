@@ -1,0 +1,22 @@
+.offline-mask {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  z-index: 9999;
+  transition: position 2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.offline-mask-title {
+  color: rgba(0, 0, 0, 0.8);
+}
+.offline-mask-desc {
+  margin-top: 20px;
+  color: red;
+  font-weight: bold;
+}

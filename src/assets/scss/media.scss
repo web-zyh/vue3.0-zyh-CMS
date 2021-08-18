@@ -1,0 +1,33 @@
+// color
+$--color-brand-green: #8cc63e;
+$--color-brand-purple: #eb0080;
+$--color-brand-red: #ee0d29;
+$--color-brand-yellow: #f8bd0b;
+$--color-hover: #f445a4;
+$--color-default: #8d8d8d;
+$--color-disabled: #999;
+$--color-primary: #333;
+$--color-border: #ddd;
+
+/**
+  * devices
+  * 用于布局调整
+  * 方案: https://medium.com/@elad/the-new-responsive-design-evolution-2bfb9b504a4e
+  * js 查看 src/utils/device.js
+ **/
+//  手机
+$--device-mobile: "(max-width: 767px)";
+// Pad
+$--device-tablet: "(min-width: 768px) and (max-width: 1024px)";
+// Pc
+$--device-pc: "(min-width: 1025px)";
+// 手机和 Pad (有大部分样式手机和 Pad 端是一样的，因此增加此变量)
+$--device-mobile-and-tablet: "(max-width: 1024px)";
+
+// layout
+// mobile
+$--container-m-padding-x: 20px;
+// tablet
+$--container-t-padding-x: 25px;
+// pc
+$--container-p-padding-x: 30.08px;

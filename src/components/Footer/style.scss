@@ -1,0 +1,32 @@
+    .setFooter {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        & .footer_link {
+            text-align: center;
+            display: flex;
+            width: 100%;
+            padding: 3.63rem 0 2.56rem 0;
+            & .footerLink_item {
+                flex-grow: 1;
+                & h3 {
+                    font-size: 1.25rem;
+                    font-weight: 600;
+                    color: #fff;
+                    line-height: 1.75rem;
+                    min-height: 3.8rem;
+                    margin: 0;
+                    padding: 0;
+                }
+                & a {
+                    color: #fff;
+                    font-size: 0.94rem;
+                    font-weight: 300;
+                    line-height: 1.88rem;
+                }
+                & a:hover {
+                    color: #eb0080;
+                }
+            }
+        }
+    }

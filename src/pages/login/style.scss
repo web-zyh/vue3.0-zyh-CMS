@@ -1,0 +1,26 @@
+.login {
+    height: 100vh;
+    position: relative;
+    background-image: url(../../assets/login/login-bg.png);
+    & .login-mask {
+        height: 100%;
+        background-image: url(../../assets/login/login-in.png);
+        background-size: 80% 80%;
+        /* 按比例缩放 */
+        background-position: 30% 30%;
+        /* 这个是按从左往右，从上往下的百分比位置进行调整 */
+        background-repeat: no-repeat;
+    }
+    & .form {
+        // width: 24rem;
+        // height: 15rem;
+        background-color: #ddd !important;
+        position: absolute;
+        right: 28px;
+        top: 50%;
+        padding: 28px;
+        border-radius: 10px;
+        background: #fff;
+        transform: translate(0%, -50%);
+    }
+}
