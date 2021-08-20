@@ -96,9 +96,12 @@ export default defineComponent({
                 username: formState.account,
                 password: formState.password,
               };
+                router.push("/index");
+
               const result:any = await LOGIN(obj);
               if( result?.code == 1 ) {
                 const { token,tokenType } = result.data;
+                // store.dispatch('user/saveTokenAsync',tokenType + " " + token);
                 store.dispatch('user/saveTokenAsync',tokenType + " " + token);
                 router.push("/index");
               } else {

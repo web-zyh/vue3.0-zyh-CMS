@@ -6,13 +6,13 @@
     class="layout-silder"
   >
   <div class="logo" @click="$router.push('/index')" :style="{ justifyContent: collapsed ? 'center' : 'flex-start' }">
-      <div class="logo-img"></div>
+      <div class="_img"></div>
       <transition name="el-zoom-in-center">
-        <h1 v-if="!collapsed" class="logo-text">{{ title }}</h1>
+        <h1 v-if="!collapsed" class="_text">{{ title }}</h1>
       </transition>
     </div> 
     <a-menu :theme="theme" :mode="mode" style="margin-top: 50px;" @click="handleClick">
-        <SidebarItem v-for="item in routerList" :key="item.path" :index="item.path" :nav="item" />
+        <SidebarItem v-for="item in routerList" :key="item.path" :index="item.path" :nav="item"  />
     </a-menu>
   </a-layout-sider>
 </template>
@@ -110,7 +110,7 @@ export default defineComponent({
   justify-content: center;
   align-items: center;
 
-  .logo-img {
+  ._img {
     width: 32px;
     height: 32px;
     background-image: url(../../../assets/logo.png);
@@ -120,7 +120,7 @@ export default defineComponent({
     background-size: contain;
   }
 
-  .logo-text {
+  ._text {
     display: inline-block;
     height: 50px;
     margin-left: 12px;

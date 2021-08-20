@@ -4,6 +4,8 @@ import "./registerServiceWorker";
 import router from "./router";
 import store from "./store";
 import i18n from "./lang/i18n";
+import 'normalize.css';
+
 // 全局引入antd组件 start
 import Antd from "ant-design-vue";
 import "ant-design-vue/dist/antd.css";

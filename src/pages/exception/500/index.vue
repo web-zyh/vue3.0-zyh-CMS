@@ -10,6 +10,7 @@
 <script lang="ts">
 import { defineComponent, reactive, toRefs, onMounted } from "vue";
 import CustomException from "@/components/Exception/main.vue";
+import images500 from "@/assets/500.png";
 
 export default defineComponent({
   components: {
@@ -17,7 +18,7 @@ export default defineComponent({
   },
   setup() {
     const state = reactive({
-      exce_500: require("../../../assets/500.png"),
+      exce_500: images500,
     });
     onMounted(() => {
       console.log("我是500");

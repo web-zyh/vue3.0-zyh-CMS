@@ -5,10 +5,9 @@ import Qs from "qs";
 import { showFullScreenLoading, hideFullScreenLoading } from '../../components/Loading/config';
 
 // create axios
-console.log(process.env);
 export const service: AxiosInstance = Axios.create({
   // process.env.NODE_ENV 会自动区分是开发环境还是生产环境，会自动切换对应的BASE_URL
-  baseURL: process.env.VUE_APP_URL,
+  // baseURL: process.env.VUE_APP_URL,
   timeout: 10000, // 请求超时时间
   headers: {
     // 'Content-Type': 'application/json',
@@ -32,10 +31,10 @@ export const service: AxiosInstance = Axios.create({
 
 service.defaults.withCredentials = false; // 跨域安全策略
 
-/* request拦截器 */
+/* 发起请求之前的拦截器 */
 service.interceptors.request.use(
-  (config) => {
-    // 在发送请求之前做某事
+  (config: any) => {
+    // 如果有token 就携带tokon
     const token = getToken();
     if (token) {
       config.headers.Authorization = token;
@@ -43,21 +42,20 @@ service.interceptors.request.use(
     showFullScreenLoading();
     return config;
   },
-  (error) => {
+  (error: any) => {
     // 请求错误时做些事
     hideFullScreenLoading();
     return Promise.reject(error);
   }
 );
 
-/* response 拦截器 */
+// 响应拦截器
 service.interceptors.response.use(
-  (response) => {
-    // 对响应数据做些事
+  (response: any) => {
     hideFullScreenLoading();
     return response.data;
   },
-  (error) => {
+  (error: any) => {
     // 服务器响应出错时
     // 也可以在此设置直接跳转到出错页面，如error页面，404页面...
     hideFullScreenLoading();

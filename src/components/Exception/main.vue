@@ -19,6 +19,7 @@
 import { defineComponent, onMounted } from "vue";
 import { useStore } from "vuex";
 import { useRouter } from "vue-router";
+import images404 from "@/assets/404.png";
 
 export default defineComponent({
   name: "Exception",
@@ -26,7 +27,8 @@ export default defineComponent({
     src:{
       type: String,
       default: () => {
-        return require("../../assets/403.png");
+        // return require("../../assets/403.png");
+        return images404;
       },
     },
     alt:{

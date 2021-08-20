@@ -7,7 +7,6 @@ import {
 import store from "../store/index";
 import { removeItem, clearItem } from "../utils/storage/storage";
 import { notification } from "ant-design-vue";
-import NProgress from "nprogress";
 
 const state = store.state as any;
 
@@ -25,12 +24,12 @@ const routes: Array<RouteRecordRaw> = [
       {
         path: '/index',
         component: () => import('@/pages/index/index.vue'),
-        meta: { title: '首页', icon: 'GlobalOutlined', affix: true }
+        meta: { title: '首页', icon: 'SwapOutlined', affix: true }
       },
       {
         path: '/account',
         component: () => import('@/pages/account/index.vue'),
-        meta: { title: '个人页', icon: 'GlobalOutlined', affix: true },
+        meta: { title: '个人页', icon: 'StepBackwardOutlined', affix: true },
         children: [
           {
             path: "/account/center",
@@ -39,7 +38,7 @@ const routes: Array<RouteRecordRaw> = [
           },
           {
             path: "/account/setting",
-            meta: { title: "个人设置", icon: 'GlobalOutlined' },
+            meta: { title: "个人设置", icon: 'StepBackwardOutlined' },
             component: () => import("@/pages/account/setting/index.vue"),
           },
         ]
@@ -47,7 +46,7 @@ const routes: Array<RouteRecordRaw> = [
       {
         path: '/exception',
         component: () => import('@/pages/exception/index.vue'),
-        meta: { title: '异常页', icon: 'GlobalOutlined', affix: true },
+        meta: { title: '异常页', icon: 'DownSquareOutlined', affix: true },
         children: [
           {
             path: "/exception/403",
@@ -61,7 +60,7 @@ const routes: Array<RouteRecordRaw> = [
           },
           {
             path: "/exception/500",
-            meta: { title: "500",icon: 'GlobalOutlined' },
+            meta: { title: "500",icon: 'PicRightOutlined' },
             component: () => import("@/pages/exception/500/index.vue"),
           },
         ]
@@ -87,7 +86,6 @@ const router = createRouter({
 // from:当前导航即将离开的路由
 // next:Function,进行管道中的一个钩子，如果执行完了，则导航的状态就是 confirmed （确认的）；否则为false，终止导航。
 router.beforeEach((to, from, next) => {
-  NProgress.start();
   if (to.path == "/login") {
     removeItem("token");
     next();
@@ -99,20 +97,20 @@ router.beforeEach((to, from, next) => {
         document.title = to.meta.title as string;
       }
     } else {
-      // 否则路由初始到登录页
-      notification.open({
-        type: "warning",
-        message: "登录失败",
-        description: "请您输入有效的用户名及密码进行登录",
-        duration: 5
-      });
-      next({
-        path: "/login",
-      });
+      next();
+      // // 否则路由初始到登录页
+      // notification.open({
+      //   type: "warning",
+      //   message: "登录失败",
+      //   description: "请您输入有效的用户名及密码进行登录",
+      //   duration: 5
+      // });
+      // next({
+      //   path: "/login",
+      // });
     }
   }
 });
 router.afterEach((_to, _from) => {
-  NProgress.done();
 });
 export default router;
